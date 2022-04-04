@@ -1,0 +1,214 @@
+.top-menu-img{
+    width:100px; 
+    /* height:80px; */
+    background-color:white;
+    /* border-radius: 100%; */
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    background:transparent;
+    top:-20px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
+}
+
+.custom-profile-menu{
+  height:initial;
+}
+
+.mobile-pricing-canvas{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom:30px;
+}
+
+.fixed-price-toggle{
+  position:fixed;
+  bottom:0px; 
+  padding:5px;
+  z-index: 100000;
+  color:white;
+  left:0px; 
+  right:0px; 
+}
+
+.mobile-pricing-canvas i{
+  display:inline-block; 
+  vertical-align:middle;
+}
+
+span.text-toggle{
+  font-size:1.2em !important;
+}
+
+.custom-jumbotron{
+  background-image:url("../img/trenova_img/trenova_pics/mentor_4b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color:greenyellow;
+  height:600px;
+  position:relative;
+}
+
+.custom-jumbotron-overlay{
+  background-color:rgba(0,0,0,.6);
+  position:absolute;
+  top:0px; 
+  left:0px; right:0px;
+  bottom:0px;
+}
+
+.custom-slider-img{
+    background-image:url("../img/pixel/conference.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: position 0;
+}
+
+.custom-img-overlay{
+    position:absolute;
+    background-color:rgb(0,0,0,0.6);
+    top:0px; right:0px; left:0px; bottom:0px;
+}
+
+.custom-black{
+  color:black !important;
+}
+
+.wa_click_to_chat{
+    position:fixed; 
+    bottom:15px;
+    right:25px; 
+    background-color:black; 
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    padding:5px; 
+    background-color:white;
+    box-shadow:0 1px 4px 0 rgba(0,0,0,.14);
+    z-index:10000;
+  }
+  
+  .wa_click_to_chat div{
+    position:relative;
+  }
+  
+  .wa_live_indicator{
+    display:block; 
+    background-color:red;
+    position:absolute;
+    right:0px;
+    top:-5px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    animation-name:blinker;
+    color:white;
+    cursor:pointer;
+    font-size:.9em;
+    animation-duration:2s;
+    /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    animation-iteration-count: infinite;
+    /* transition:0.5s; */
+  }
+
+  .custom-form-container{width:50%;}
+  .custom-placeholder{background-color:#e9ecef;}
+  /* .custom-placeholder li{border-bottom:1px solid gray; padding:15px;} */
+  .small-font{font-size:.9em;}
+
+  table.custom-price-table td{text-align: center !important; vertical-align: middle !important;}
+  table.custom-price-table td > .fa{
+    font-size:1.5em;
+  }
+
+  .fixed-toggle-container{height:65px; padding:10px;}
+
+  .custom-service-img{
+    /* border:1px solid gray; */
+    display:inline-block !important;
+    margin:auto !important;
+    width:100px; 
+    height:100px;
+    vertical-align:middle !important;
+    border-radius:5px;
+    padding:15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .mobile-font{
+    font-size:1.3em;
+  }
+
+  .custom-price-mini-info{
+    position:absolute; 
+    height:200px;
+    /* border:1px solid #DEDEDE;
+    border-radius: 6px; */
+    padding:15px;
+    overflow-y:scroll;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    z-index:100;
+    background-color:white;
+    top:0px; 
+    bottom:0px; 
+    padding:15px 15px;
+    left:0px; 
+    right:0px;
+  }
+
+  .custom-green-background{
+    background-image: url("../img/trenova_img/trenova_pics/mentor_1.jpg");
+    color:white;
+    /* background-repeat: no-repeat; */
+    background-size:contain;
+  }
+  .custom-green-overlay{
+    background-color:rgba(111, 183, 29, 0.9);
+    top:0px; 
+    bottom:0px; 
+    left:0px; 
+    right:0px;
+    position:absolute;
+  }
+
+  .custom-form{
+    border-radius:5px; 
+    padding:15px;
+    margin:auto;
+    margin-bottom:15px;
+  }
+
+  .lemon-bg{
+    /* background-color:#ABD47B; */
+    /* background-color:#D3D3D3; */
+    background-color:#E5E5E5;
+  }
+
+  .testimonials p{
+    margin-bottom:30px !important;
+  }
+
+  #scrollUp{ bottom:100px !important;}
+
+  table.custom-price-table tr, td, th{border:2px solid #DEDEDE;}
+  .single-service p{font-size:1.1em !important;}
+
+
+  @media only screen and (max-width: 600px){
+    .custom-form-container{width:100% !important;}
+    .single-service p{font-size:1.2em !important;}
+    .mobile-nav{margin-top:5px !important;}
+    .custom-slider-img{
+      background-image:url("../img/pixel/conference.jpg") !important;
+      background-size: contain !important;
+      background-repeat: no-repeat;
+      background: position 0;
+    }
+    .custom-profile-menu{height: inherit;}
+    .custom-img-overlay{
+      position:absolute;
+      /* background-color:rgb(0,0,0,0.6); */
+      top:0px; right:0px; left:0px; bottom:0px;
+    }
+
+    .single-service{height:initial !important;}
+  }

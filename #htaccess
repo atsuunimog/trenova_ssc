@@ -1,0 +1,87 @@
+#Turn on rewrite Engine
+RewriteEngine on
+
+# Prevent Apache from serving .htaccess files:
+; <FilesMatch "^\.htaccess">
+;     Order allow,deny
+;     Deny from all
+; </FilesMatch>
+
+ErrorDocument 404 /404
+ErrorDocument 403 "Sorry, you are not permitted to access this."
+ErrorDocument 500 "Oops! Our server encountered an error. Try again later."
+
+#Enable https redirect
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#remove html file extension-e.g. https://example.com/file.html will become https://example.com/file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+#remove html file extension-e.g. https://example.com/file.html will become https://example.com/file
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+#Rewrite for fulltime jobs
+; RewriteRule ^popular-job-detail/([0-9]+)/([0-9a-zA-Z_-]+) popular-job-detail.php?job-id=$1&title=$2 [NC,L]
+
+#Rewrite for freelance portfolio
+# /portfolio-freelancer?u_id=userid
+; RewriteRule ^freelancer/([0-9a-zA-Z_-]+) portfolio-freelancer.php?u_id=$1 [NC,L]
+
+
+#prevent image hotlinking.
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?hembarecruiter.com [NC]
+# RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
+
+#Compress text files using gzip/deflate
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+
+#Expires headers
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+# ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+# ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresDefault "access plus 2 days"
+
+#limit file uploading size
+# LimitRequestBody 1048576
+
+#Set default index page
+DirectoryIndex index.php
+
+#Set server time zone to Africa
+SetEnv TZ Africa/Lagos
+
+#Rewrite for portfolio-freelancer.php
+#www.hembarecruiter.com/portfolio-freelancer?u_id=Atsu-Dominic5e973f28d5ae2
+# RewriteRule ^portfolio-freelancer/([0-9a-zA-Z_-]+) portfolio-freelancer.php?u_id=$1 [NC,L]
+
+
+#Rewrite for courses.php
+# RewriteRule ^search index.php [NC,L]
+
+#rewrite for single posts
+#http://localhost/doc_refactor/resource.php?course-id=11&title=hello-world
+#https://localhost/thewigwork/profile.php?unique_id=unimog5d515ddd61462
+# RewriteRule ^profile/([0-9a-zA-Z_-]+) profile.php?unique_id=$1 [NC,L]
+
+#rewrite for compendium cat id
+#http://localhost/doc_refactor/resource-compendium.php?compendium-id=8&title=tools-in-the-social-marketing-sphere
+# RewriteRule ^post-compendium/([0-9]+)/([0-9a-zA-Z_-]+) resource-compendium.php?compendium-id=$1&title=$2 [NC,L]
+
+#rewrite for compendium post id
+#http://www.doctrybe.com/resource-compendium.php?compendium-id=5&compendium-post-id=32&title=nigerian-law-school-corporate-law-practice-august-2012
+# RewriteRule ^post-compendium-data/([0-9]+)/([0-9]+)/([0-9a-zA-Z_-]+) resource-compendium.php?compendium-id=$1&compendium-post-id=$2&title=$3 [NC,L]
+
